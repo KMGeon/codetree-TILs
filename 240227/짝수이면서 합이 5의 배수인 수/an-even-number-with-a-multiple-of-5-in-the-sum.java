@@ -1,25 +1,18 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int input = sc.nextInt();
-        System.out.print(Main.Solution(input));
+    public static boolean isMagicNumber(int n) {
+        return n % 2 == 0 && (n / 10 + (n % 10)) % 5 == 0;
     }
-
-    private static String Solution(int input) {
-        int temp =0;
-        int temp2 = 0;
-        char[] chars = Character.toChars(input);
+    
+    public static void main(String[] args) {
+        // 변수 선언 및 입력:
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
         
-        for (int i=0; i< chars.length; i++){
-            temp +=chars[i];
-        }
-        
-        if (temp %5 ==0 && input %2 ==0){
-            return "Yes";
-        }
-        
-        return "No";
+        if(isMagicNumber(n))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
     }
 }

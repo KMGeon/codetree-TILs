@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Main {
     // 최솟값을 반환하는 함수를 작성합니다.
     public static int min(int a, int b, int c) {

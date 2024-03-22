@@ -17,7 +17,7 @@ public class Main {
         List<String> list = new ArrayList<>();
 
         if (o != '+' && o != '-' && o != '*' && o != '/') {
-            return "false";
+            return "False";
         }
 
         switch (o) {

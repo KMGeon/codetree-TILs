@@ -7,26 +7,28 @@ public class Main {
 		int b = sc.nextInt();
 
 		System.out.println(Main.solution(a,b));
-		
+
 	}
 
 	private static String solution(int a, int b) {
 		String result ="Yes";
-		
-		
+
+
 		if (isDayValid(a,b)){
 			return result;
 		}
-		
+
 		return "No";
 	}
 
 	private static boolean isDayValid(int a, int b) {
-		
+
 		if (isMonthValid(a)){
 			if (a==2){
 				if (b>=1 && b<=28){
 					return true;
+				}else{
+					return false;
 				}
 			}
 			return b >= 1 && b <= 31;

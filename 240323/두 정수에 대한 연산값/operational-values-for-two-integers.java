@@ -6,14 +6,20 @@ public class Main {
 		int a = sc.nextInt();
 		int b = sc.nextInt();
 
-		System.out.println(Main.solution(a, b));
+		System.out.println(Main.solution(a,b));
 	}
 
 	private static String solution(int a, int b) {
-		return a > b ? logic(b, a) : logic(a, b);
+		if (a>b){
+			return logic(a,b);
+		}else{
+			return logic(b,a);
+		}
 	}
 
 	private static String logic(int a, int b) {
-		return (a + 25) + " " + (b * 2);
+		int a1 = a + 25;
+		int b1 = b * 2;
+		return a1+" "+b1;
 	}
 }

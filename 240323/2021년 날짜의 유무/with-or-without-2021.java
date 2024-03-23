@@ -20,22 +20,18 @@ public class Main {
 
 		return "No";
 	}
-
 	private static boolean isDayValid(int a, int b) {
-
 		if (isMonthValid(a)){
 			if (a==2){
-				if (b>=1 && b<=28){
-					return true;
-				}else{
-					return false;
-				}
+				return b >= 1 && b <= 28;
+			} else if (a==4 || a==6 || a==9 || a==11) {
+				return b >= 1 && b <= 30;
+			} else {
+				return b >= 1 && b <= 31;
 			}
-			return b >= 1 && b <= 31;
 		}
 		return false;
 	}
-
 	private static boolean isMonthValid(int a) {
 		return a >= 1 && a <= 12;
 	}

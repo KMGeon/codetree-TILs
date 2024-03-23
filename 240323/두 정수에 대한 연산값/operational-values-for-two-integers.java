@@ -10,7 +10,7 @@ public class Main {
 	}
 
 	private static String solution(int a, int b) {
-		return a > b ? logic(a, b) : logic(b, a);
+		return a > b ? logic(b, a) : logic(a, b);
 	}
 
 	private static String logic(int a, int b) {

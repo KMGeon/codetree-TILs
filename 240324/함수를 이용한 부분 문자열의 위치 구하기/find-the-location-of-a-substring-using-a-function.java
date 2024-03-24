@@ -1,49 +1,47 @@
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String str = sc.next();
-        String str2 = sc.next();
-        System.out.println(solution(str, str2));
-    }
+	public static String text, pattern;
 
-    private static int solution(String str, String str2) {
-        Queue<Character> queue = new LinkedList<>();
+	public static boolean isSubStr(int startIdx) {
+		int n = text.length();
+		int m = pattern.length();
 
-        // 입력 문자열을 큐에 추가
-        for (char c : str.toCharArray()) {
-            queue.add(c);
-        }
+		// 만약 pattern을 매칭 시키기에
+		// text 문자열 범위를 초과하게 된다면
+		// 부분 문자열이 될 수 없으므로 false를 반환합니다.
+		if(startIdx + m - 1 >= n)
+			return false;
 
-        int result = -1; // 결과값을 -1로 초기화하여 부분 문자열이 발견되지 않았음을 표시
+		for(int j = 0; j < m; j++) {
+			// 하나라도 다르다면, 부분 문자열이 아니므로 false를 반환합니다.
+			if(text.charAt(startIdx + j) != pattern.charAt(j))
+				return false;
+		}
 
-        // 입력 문자열을 탐색하면서 목적 문자열이 부분 문자열로 존재하는지 확인
-        for (int i = 0; i <= str.length() - str2.length(); i++) {
-            boolean found = true; // 목적 문자열이 부분 문자열로 존재하는지 여부를 나타내는 플래그
+		// 전부 일치한다면 부분 문자열이므로 true를 반환합니다.
+		return true;
+	}
 
-            // 목적 문자열과 입력 문자열의 현재 위치부터 비교하여 부분 문자열이 일치하는지 확인
-            for (int j = 0; j < str2.length(); j++) {
-                char peek = queue.poll();
-                if (peek != str2.charAt(j)) {
-                    found = false; // 부분 문자열이 일치하지 않으면 플래그를 false로 설정
-                }
-                queue.add(peek); // 큐에 다시 문자 추가
-            }
+	// 부분 문자열의 위치를 찾아 반환합니다.
+	public static int findIndex() {
+		int n = text.length();
+		for(int i = 0; i < n; i++) {
+			// i번째를 시작으로 부분 문자열이 된다면, 해당 위치를 반환합니다.
+			if(isSubStr(i))
+				return i;
+		}
 
-            // 부분 문자열이 발견되면 해당 인덱스를 결과값으로 설정하고 반복문 종료
-            if (found) {
-                result = i;
-                break;
-            }
+		// 없다면, -1을 반환합니다.
+		return -1;
+	}
 
-            // 입력 문자열의 첫 번째 문자를 큐에서 제거하여 다음 위치의 문자를 탐색할 수 있도록 함
-            queue.poll();
-            queue.add(str.charAt(i + str2.length()));
-        }
+	public static void main(String[] args) {
+		// 변수 선언 및 입력:
+		Scanner sc = new Scanner(System.in);
+		text = sc.next();
+		pattern = sc.next();
 
-        return result;
-    }
+		System.out.print(findIndex());
+	}
 }

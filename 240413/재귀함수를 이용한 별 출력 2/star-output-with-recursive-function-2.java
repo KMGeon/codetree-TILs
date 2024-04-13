@@ -10,10 +10,10 @@ public class Main {
     private static void solution(int num) {
         if (num ==0) return;
 
-        for (int i=0; i<num;i++) System.out.print("*");
+        for (int i=0; i<num;i++) System.out.print("*"+" ");
         System.out.println();
         solution(num-1);
-        for (int i=0; i<num;i++) System.out.print("*");
+        for (int i=0; i<num;i++) System.out.print("*"+" ");
         System.out.println();
     }
 }

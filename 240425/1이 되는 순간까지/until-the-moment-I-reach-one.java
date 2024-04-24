@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     private static Integer result =0;
     public static void main(String[] args) {

@@ -6,7 +6,6 @@ public class Main {
 
         int a1 = sc.nextInt();
         Integer result = Main.solution(a1);
-        System.out.println("result = " + result);
         System.out.println(result%100);
     }
 

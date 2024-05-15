@@ -20,15 +20,15 @@ public class Main {
     }
 
     private static String solution(int a, int[] arr1, int[] arr2) {
-        
+
         Arrays.sort(arr1);
         Arrays.sort(arr2);
 
         boolean equals = Arrays.equals(arr1, arr2);
         if (equals) {
-            return "YES";
+            return "Yes";
         }else{
-            return "NO";
+            return "No";
         }
     }
 }

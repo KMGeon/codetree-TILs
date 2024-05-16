@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+mport java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -23,7 +23,9 @@ public class Main {
         for (String s : strArr) {
             String substring = s.substring(0, 2);
 
-            if (substring.equals(str)){
+            if (s.length() < str.length()){
+                return;
+            }else if (substring.equals(str)){
                 list.add(s);
             }
         }

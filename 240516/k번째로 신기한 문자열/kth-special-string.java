@@ -33,8 +33,6 @@ public class Main {
 
         Arrays.sort(resultArr);
 
-        Arrays.stream(resultArr).forEach(System.out::println);
-
         System.out.println(resultArr[b2]);
     }
 }

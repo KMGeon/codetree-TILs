@@ -33,6 +33,6 @@ public class Main {
 
         Arrays.sort(resultArr);
 
-        System.out.println(resultArr[b2]);
+        System.out.println(resultArr[b2-1]);
     }
 }

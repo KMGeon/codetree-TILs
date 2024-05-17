@@ -1,6 +1,13 @@
+import java.util.Scanner;
+
+
 public class Main {
     public static void main(String[] args) {
-        zero zero = new zero("codetree", "L", 13);
+        Scanner sc = new Scanner(System.in);
+        String a1 = sc.next();
+        String a2 = sc.next();
+        int a3 = sc.nextInt();
+        zero zero = new zero(a1,a2,a3);
         System.out.println("secret code : "+zero.getSecretCode());
         System.out.println("meeting point : "+zero.getMeetingPoint());
         System.out.println("time : "+zero.getTime());

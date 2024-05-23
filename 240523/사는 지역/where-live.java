@@ -19,7 +19,7 @@ public class Main {
         int TEMP =0;
 
         for (int i=1; i< number; i++){
-            if ((personArr[i].getName().compareTo(personArr[TEMP].getRegion() )> 0)) {
+            if ((personArr[i].getName().compareTo(personArr[TEMP].getName() )> 0)) {
                 TEMP = i;
             }
         }

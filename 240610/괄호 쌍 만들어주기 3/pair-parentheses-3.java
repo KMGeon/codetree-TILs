@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        String str = ")(()())";
+        Scanner sc = new Scanner(System.in);
+        
+        String str = sc.next();
         char[] charArray = str.toCharArray();
 
         System.out.println(Main.solution(charArray));

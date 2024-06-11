@@ -1,7 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        int a1 = 1010;
+        int a1 = 1;
 
+        if (a1 ==1){
+            System.out.println(0);
+            return;
+        }
         char[] charArray = String.valueOf(a1).toCharArray();
 
         int minVal =Integer.MAX_VALUE;
@@ -10,6 +14,8 @@ public class Main {
                 minVal = Math.min(minVal, i);
             }
         }
+
+        System.out.println("minVal = " + minVal);
 
         charArray[minVal] = '1';
 

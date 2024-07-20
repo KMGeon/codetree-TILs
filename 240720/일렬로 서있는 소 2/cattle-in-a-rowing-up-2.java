@@ -27,11 +27,11 @@ public class Main {
     }
 
     private static boolean isValueIjk(int i, int j, int k, int[] arr) {
-        return arr[i] <arr[j] && arr[j] < arr[k] ? true : false;
+        return arr[i] <arr[j] && arr[j] < arr[k]&&arr[i]<arr[k] ? true : false;
     }
 
     private static boolean isIjk(int i, int j, int k) {
-        return i<j && j<k ? true : false;
+        return i<j && j<k && i<k ? true : false;
 
     }
 }

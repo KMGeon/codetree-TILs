@@ -1,26 +1,22 @@
 import java.util.Scanner;
 
 public class Main {
+    public static String str;
+    
     public static void main(String[] args) {
-        String str = ")(()())";
-        char[] arr = str.toCharArray();
-        int size = arr.length;
+        Scanner sc = new Scanner(System.in);
 
-        int result = 0;
-        for (int i = 0; i < size; i++) {
+        // 입력
+        str = sc.next();
+        int n = str.length();
 
-            if (arr[i] == ')'){
-                continue;
-            }
-
-            int sumDiff = 0;
-            for (int j = i + 1; j < size; j++) {
-                if (arr[j] == ')') {
-                    sumDiff += 1;
-                }
-            }
-            result += sumDiff;
-        }
-        System.out.println(result);
+        // 모든 쌍을 다 잡아봅니다.
+        int cnt = 0;
+        for(int i = 0; i < n; i++)
+            for(int j = i + 1; j < n; j++)
+                if(str.charAt(i) == '(' && str.charAt(j) == ')')
+                    cnt++;
+        
+        System.out.println(cnt);
     }
 }

@@ -22,7 +22,7 @@ public class Main {
             maxN = Math.max(maxN, current);
         }
 
-        if (maxN == 0) {
+        if (maxN == 0 || maxN ==1) {
             maxN = Integer.parseInt(a);
         }
         System.out.println(maxN);

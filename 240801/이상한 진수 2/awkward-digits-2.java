@@ -23,7 +23,7 @@ public class Main {
         }
 
          if (maxN == 0) {
-            maxN = originalA;
+            maxN = a;
         }
         System.out.println(maxN);
     }

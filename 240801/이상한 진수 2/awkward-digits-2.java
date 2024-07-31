@@ -21,6 +21,10 @@ public class Main {
             int current = Integer.parseInt(modified.toString(), 2);
             maxN = Math.max(maxN, current);
         }
+
+         if (maxN == 0) {
+            maxN = originalA;
+        }
         System.out.println(maxN);
     }
 }

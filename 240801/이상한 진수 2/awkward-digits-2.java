@@ -1,30 +1,22 @@
 import java.util.Scanner;
 
 public class Main {
-    private static int INPUT = 1010;
-
+    public static final int INT_MIN = Integer.MIN_VALUE;
     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-        String a = "1010";
-
-        int maxN = 0;
-
-        for (int i = 0; i < a.length(); i++) {
-            StringBuilder modified = new StringBuilder(a);
-            if (a.charAt(i) == '0') {
-                modified.setCharAt(i, '1');
-            } else {
-                modified.setCharAt(i, '0');
-            }
-
-            int current = Integer.parseInt(modified.toString(), 2);
-            maxN = Math.max(maxN, current);
+        Scanner sc = new Scanner(System.in);
+        String binary = sc.next();
+        
+        int ans = INT_MIN;
+        for(int i = 0; i < (int) binary.length(); i++) {
+            binary = binary.substring(0, i) + (char)('0' + '1' - binary.charAt(i)) + binary.substring(i + 1);
+            int num = 0;
+            for(int j = 0; j < (int) binary.length(); j++)
+                num = num * 2 + (binary.charAt(j) - '0');
+            
+            ans = Math.max(ans, num);
+            binary = binary.substring(0, i) + (char)('0' + '1' - binary.charAt(i)) + binary.substring(i + 1);
         }
-
-        if (maxN == 0 || maxN ==1) {
-            maxN = Integer.parseInt(a);
-        }
-        System.out.println(maxN);
+        
+        System.out.print(ans);
     }
 }

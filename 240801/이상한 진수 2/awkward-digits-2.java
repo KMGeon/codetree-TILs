@@ -22,8 +22,8 @@ public class Main {
             maxN = Math.max(maxN, current);
         }
 
-         if (maxN == 0) {
-            maxN = a;
+        if (maxN == 0) {
+            maxN = Integer.parseInt(a);
         }
         System.out.println(maxN);
     }

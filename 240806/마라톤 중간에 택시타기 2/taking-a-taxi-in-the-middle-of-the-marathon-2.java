@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static final int INT_MAX = Integer.MAX_VALUE;
     public static final int MAX_N = 100;

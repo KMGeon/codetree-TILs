@@ -24,7 +24,7 @@ public class Main {
             int prev = 0;
             for (int j = 1; j < n; j++) {
                 if (i==j) continue;
-                diff = Math.abs(x[prev] - x[j]) + Math.abs(y[prev] - y[j]);
+                diff += Math.abs(x[prev] - x[j]) + Math.abs(y[prev] - y[j]);
                 prev = j;
             }
             result = Math.min(diff, result);

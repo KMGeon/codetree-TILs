@@ -17,7 +17,7 @@ public class Main {
             y[i] = sc.nextInt();
         }
 
-        int result = 0;
+        int result = INT_MAX;
         for (int i = 1; i < n - 1; i++) {
 
             int diff = 0;
